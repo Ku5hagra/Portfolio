@@ -40,7 +40,7 @@ function Navbar() {
         <div className="collapse navbar-collapse flex-grow-0" id="collapseNav">
           <div className="navbar-nav">
             <a
-              href="https://drive.google.com/file/d/1Pp4P_fe1qKvqANDKtQd1qDudLg51nf-g/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qFGGx_DK2JkVEfVhsY2ag3zhXUiF-_VF/view?usp=sharing"
               className="nav-item nav-link  text-light pl-3"
             >
               CV download
