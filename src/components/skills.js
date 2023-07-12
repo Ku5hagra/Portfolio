@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Skills() {
   return (
-    <div className="container-fluid pl-0 pt-5 pb-5 ">
+    <div className="container-fluid pl-0 pr-0 pt-5 pb-5 ">
       <div className="d-flex text-center  no-wrap v">
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe p-0 h-100">
             <div className="text-center ">
               <img
@@ -19,7 +19,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe p-0 h-100">
             <div className="text-center ">
               <img
@@ -34,7 +34,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe p-0 h-100">
             <div className="text-center ">
               <img
@@ -49,7 +49,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe  h-100">
             <div className="text-center ">
               <img
@@ -64,7 +64,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe  h-100">
             <div className="text-center ">
               <img
@@ -79,7 +79,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe  h-100">
             <div className="text-center ">
               <img
@@ -94,7 +94,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe  h-100">
             <div className="text-center ">
               <img
@@ -109,7 +109,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe  h-100">
             <div className="text-center ">
               <img
@@ -124,7 +124,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="col-3 col-md-2 px-3">
+        <div className="col-3 col-md-2 px-5">
           <div className="swipe   h-100">
             <div className="text-center ">
               <img
