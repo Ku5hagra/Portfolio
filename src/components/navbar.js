@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 function Navbar() {
   //     const customizestyle={
   // textDecoration:none,
   //     }
   return (
     <nav className="navbar pb-1 nav shadow fixed-top navbar-expand-md">
-      <div className="container-fluid ">
+      <div className="container ">
         <Link
           className="nav-brand text-light text-decoration-none font-weight-light nohover"
           onClick={() => {
@@ -25,7 +26,7 @@ function Navbar() {
               className="btn btn-outline-light btn-md"
             >
               Contact
-            </button>{" "}
+            </button>
           </Link>
         </div>
 
