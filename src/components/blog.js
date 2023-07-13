@@ -34,7 +34,6 @@ function Blog() {
               ))}
             </div>
             <div className=" mt-5">
-              h
               <Link
                 className="text-light text-decoration-none  text-right"
                 to="/blogpage"
