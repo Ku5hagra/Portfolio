@@ -41,7 +41,7 @@ function Project() {
                   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                 }}
               >
-                <h5>See all project →</h5>
+                <h5>See all projects →</h5>
               </Link>
             </div>
           </div>
