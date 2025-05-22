@@ -20,7 +20,7 @@ export class Provider extends Component {
   description: "Frontend of a roadmap generator using ReactJS and Tailwind CSS.",
   body: "Built interactive progress tracking UI, report generation features, and reduced manual effort in tracking personalized learning journeys.",
   imageurl:
-    "https://media.istockphoto.com/id/1322205578/photo/software-developer-coding-on-computer.jpg?s=612x612&w=0&k=20&c=LCANdvOvdLUwFG7c67c2dOVe3c1yo6E-yQpiD6kzRfQ=",
+    "https://ibb.co/273wHV4r",
 },
 
 {
@@ -29,7 +29,7 @@ export class Provider extends Component {
   description: "3D virtual conferencing platform made with Unity and Blender.",
   body: "Created immersive virtual environments, lobby UI, and enabled real-time audio transfer using Unity’s native tools.",
   imageurl:
-    "https://media.istockphoto.com/id/1288433885/photo/virtual-conference.jpg?s=612x612&w=0&k=20&c=nqU9yFj3XDa0hknAn6UVQGo3_gQgMFhOEpAnjwRkGzU=",
+    "https://photos.fife.usercontent.google.com/pw/AP1GczPr1jdoZWPrOXydeVpCTL1XuBV6AbnpkssgRxGExROW0sg9SANiVZve=w414-h220-no?authuser=0",
 },
 
 {
