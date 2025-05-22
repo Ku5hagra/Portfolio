@@ -14,31 +14,32 @@ export class Provider extends Component {
         imageurl: "https://i.imgur.com/7zuvbzo.png",
       },
 
-      // {
-      //   id: 2,
-      //   title: "project 2",
-      //   description: "This project is about",
-      //   body: "body",
-      //   imageurl:
-      //     "https://media.istockphoto.com/id/1227556289/photo/software-development-workplace-in-bright-office-with-wooden-table-programming-coding-code-on.jpg?s=612x612&w=0&k=20&c=LK-4Gl_wsdVppG1SdoWt7be10wuK7N6WMMTF-t_T3mM=",
-      // },
+{
+  id: 2,
+  title: "ProgressPal - AI Roadmap Generator",
+  description: "Frontend of a roadmap generator using ReactJS and Tailwind CSS.",
+  body: "Built interactive progress tracking UI, report generation features, and reduced manual effort in tracking personalized learning journeys.",
+  imageurl:
+    "https://media.istockphoto.com/id/1322205578/photo/software-developer-coding-on-computer.jpg?s=612x612&w=0&k=20&c=LCANdvOvdLUwFG7c67c2dOVe3c1yo6E-yQpiD6kzRfQ=",
+},
 
-      // {
-      //   id: 3,
-      //   title: "project 3",
-      //   description: "This project is about",
-      //   body: "body",
-      //   imageurl:
-      //     "https://media.istockphoto.com/id/1132331606/photo/businessman-reviewing-project-timeline.jpg?s=612x612&w=0&k=20&c=aTILFAsDU7fLr-YH9AR8IyXUdVwMUE0m8A9oKPJxZgI=",
-      // },
-      // {
-      //   id: 4,
-      //   title: "project 4",
-      //   description: "This project is about",
-      //   body: "body",
-      //   imageurl:
-      //     "https://media.istockphoto.com/id/1132331606/photo/businessman-reviewing-project-timeline.jpg?s=612x612&w=0&k=20&c=aTILFAsDU7fLr-YH9AR8IyXUdVwMUE0m8A9oKPJxZgI=",
-      // },
+{
+  id: 3,
+  title: "VIRTOMO - Virtual Conferencing App",
+  description: "3D virtual conferencing platform made with Unity and Blender.",
+  body: "Created immersive virtual environments, lobby UI, and enabled real-time audio transfer using Unity’s native tools.",
+  imageurl:
+    "https://media.istockphoto.com/id/1288433885/photo/virtual-conference.jpg?s=612x612&w=0&k=20&c=nqU9yFj3XDa0hknAn6UVQGo3_gQgMFhOEpAnjwRkGzU=",
+},
+
+{
+  id: 4,
+  title: "VIRTUAL MINDSCAPE - Cognitive VR App",
+  description: "A VR app for brain stimulation using puzzles built in Unity.",
+  body: "Designed to activate both hemispheres of the brain through creative and logical VR puzzles. Focused on cognitive development and immersive interaction.",
+  imageurl:
+    "https://media.istockphoto.com/id/1346136286/photo/brain-activity.jpg?s=612x612&w=0&k=20&c=qbvsckJr6Yxq0cbQXLZliCeXRbo9M0JEO39cK6FOb5c=",
+},
     ],
 
     blogs: [
