@@ -5,29 +5,30 @@ const Context = React.createContext();
 export class Provider extends Component {
   state = {
     projects: [
-      {
-        id: 1,
-        title: "Portfolio",
-        description:
-          "This project is my first prominent project in the field of web-development.",
-        body: "###### This Portfolio Website is a personal website created using React, HTML, CSS, JavaScript, Bootstrap, and various React libraries. The main objective of this project is to showcase myself in an organnised manner .\n\n#### Key Features:\n##### * Responsive Design:\n The website is designed to be fully responsive, ensuring optimal viewing experience across different devices and screen sizes.\n##### * React Framework:\n The project is built using React, a popular JavaScript library for building user interfaces. React provides a component-based approach, making it easier to manage and reuse code.\n##### * JSX/HTML and CSS:\n The website structure is built using JSX, while CSS is used to style and customize the appearance of the website. This allows for a personalized and professional design.\n##### * Bootstrap Integration:\n Bootstrap, a widely-used CSS framework, is utilized to enhance the website's responsiveness and provide a consistent and modern design.\n##### * React Libraries:\n Various React libraries are incorporated to enhance the functionality and interactivity of the website. These libraries include React Router for navigation, React Icons for adding icons, or React Animation libraries for creating engaging animations.\n##### * Interactive Elements:\n JavaScript is used to add interactive elements to the website, such as animated transitions, smooth scrolling, form validations, and interactive sliders. These elements help engage visitors and provide a dynamic user experience.",
-        imageurl: "https://i.imgur.com/7zuvbzo.png",
-      },
+     {
+  id: 1,
+  title: "Portfolio",
+  description:
+    "This project is my first prominent project in the field of web-development.",
+  body: "###### This Portfolio Website is a personal website created using React, HTML, CSS, JavaScript, Bootstrap, and various React libraries. The main objective of this project is to showcase myself in an organized manner.\n\n#### Key Features:\n##### * Responsive Design:\n The website is designed to be fully responsive, ensuring optimal viewing experience across different devices and screen sizes.\n##### * React Framework:\n The project is built using React, a popular JavaScript library for building user interfaces. React provides a component-based approach, making it easier to manage and reuse code.\n##### * JSX/HTML and CSS:\n The website structure is built using JSX, while CSS is used to style and customize the appearance of the website. This allows for a personalized and professional design.\n##### * Bootstrap Integration:\n Bootstrap, a widely-used CSS framework, is utilized to enhance the website's responsiveness and provide a consistent and modern design.\n##### * React Libraries:\n Various React libraries are incorporated to enhance the functionality and interactivity of the website. These libraries include React Router for navigation, React Icons for adding icons, or React Animation libraries for creating engaging animations.\n##### * Interactive Elements:\n JavaScript is used to add interactive elements to the website, such as animated transitions, smooth scrolling, form validations, and interactive sliders. These elements help engage visitors and provide a dynamic user experience.",
+  imageurl: "https://i.imgur.com/7zuvbzo.png",
+},
 
 {
   id: 2,
   title: "ProgressPal - AI Roadmap Generator",
-  description: "Frontend of a roadmap generator using ReactJS and Tailwind CSS.",
-  body: "Built interactive progress tracking UI, report generation features, and reduced manual effort in tracking personalized learning journeys.",
-  imageurl:
-    "https://ibb.co/273wHV4r",
+  description:
+    "Frontend development of an AI-assisted personalized roadmap tracking platform.",
+  body: "###### ProgressPal is an AI-supported roadmap generator designed to simplify learning journey creation and tracking. Built using ReactJS, Tailwind CSS, and JavaScript, the application emphasizes user interactivity and clean design.\n\n#### Key Features:\n##### * Roadmap UI:\n Designed and implemented an intuitive, modular interface to help users visualize their learning paths effectively.\n##### * AI Support:\n Integrated an AI mechanism (in backend) that helps generate learning roadmaps based on user input and goals.\n##### * Tailwind CSS:\n Utilized utility-first Tailwind classes for responsive layout and rapid styling, allowing for a clean and modern look.\n##### * Report Generation:\n A custom report generation module was developed to automate learning summary creation and minimize manual efforts.\n##### * Reusable Components:\n Built highly reusable and efficient components for better maintainability and scalability.\n##### * Smooth UX:\n Implemented transitions and progress indicators for better user experience during roadmap tracking.",
+  imageurl: "https://ibb.co/273wHV4r",
 },
 
 {
   id: 3,
   title: "VIRTOMO - Virtual Conferencing App",
-  description: "3D virtual conferencing platform made with Unity and Blender.",
-  body: "Created immersive virtual environments, lobby UI, and enabled real-time audio transfer using Unity’s native tools.",
+  description:
+    "A virtual conferencing platform built with Unity and Blender for immersive remote collaboration.",
+  body: "###### VIRTOMO is a Unity-based 3D virtual conferencing application that simulates realistic, immersive meeting environments. Designed for users to interact in virtual spaces, it blends creative modeling with interactive user interfaces.\n\n#### Key Features:\n##### * 3D Environment:\n Developed immersive, stylized conference spaces using Blender for modeling and Unity for integration.\n##### * Lobby UI:\n Built a fully functional virtual lobby as the central navigation space with Unity UI components.\n##### * Audio Communication:\n Implemented real-time audio communication using Unity's built-in networking tools to simulate in-person interaction.\n##### * Avatar System:\n Configured avatar-based presence to enhance personal representation within the space.\n##### * Multi-Platform Support:\n Designed with potential expansion toward multi-platform support (including VR headsets).",
   imageurl:
     "https://photos.fife.usercontent.google.com/pw/AP1GczPr1jdoZWPrOXydeVpCTL1XuBV6AbnpkssgRxGExROW0sg9SANiVZve=w414-h220-no?authuser=0",
 },
@@ -35,11 +36,13 @@ export class Provider extends Component {
 {
   id: 4,
   title: "VIRTUAL MINDSCAPE - Cognitive VR App",
-  description: "A VR app for brain stimulation using puzzles built in Unity.",
-  body: "Designed to activate both hemispheres of the brain through creative and logical VR puzzles. Focused on cognitive development and immersive interaction.",
+  description:
+    "A Unity VR application designed for brain stimulation through creative and logical puzzles.",
+  body: "###### Virtual Mindscape is a cognitive VR application created in Unity, aimed at stimulating both hemispheres of the brain. The app uses gamified puzzles to enhance mental agility and creativity.\n\n#### Key Features:\n##### * Cognitive Puzzles:\n Integrated brain-training puzzles that stimulate both logic and creativity through immersive VR interaction.\n##### * Dual-Hemisphere Engagement:\n Activities are carefully structured to engage left-brain (logical tasks) and right-brain (creative exploration).\n##### * Immersive Experience:\n Designed VR scenes that captivate the user with atmospheric visuals and spatial sound.\n##### * Unity VR Development:\n Built using Unity’s XR framework, ensuring smooth interaction with VR controllers and devices.\n##### * Educational Value:\n Focused on mental development, problem-solving, and immersive learning through active participation.\n##### * Adaptive Challenges:\n Puzzles are scalable and can adapt in difficulty to match user progress and performance.",
   imageurl:
     "https://media.istockphoto.com/id/1346136286/photo/brain-activity.jpg?s=612x612&w=0&k=20&c=qbvsckJr6Yxq0cbQXLZliCeXRbo9M0JEO39cK6FOb5c=",
-},
+}
+
     ],
 
     blogs: [
