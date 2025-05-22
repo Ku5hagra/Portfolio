@@ -20,7 +20,7 @@ export class Provider extends Component {
   description:
     "Frontend development of an AI-assisted personalized roadmap tracking platform.",
   body: "###### ProgressPal is an AI-supported roadmap generator designed to simplify learning journey creation and tracking. Built using ReactJS, Tailwind CSS, and JavaScript, the application emphasizes user interactivity and clean design.\n\n#### Key Features:\n##### * Roadmap UI:\n Designed and implemented an intuitive, modular interface to help users visualize their learning paths effectively.\n##### * AI Support:\n Integrated an AI mechanism (in backend) that helps generate learning roadmaps based on user input and goals.\n##### * Tailwind CSS:\n Utilized utility-first Tailwind classes for responsive layout and rapid styling, allowing for a clean and modern look.\n##### * Report Generation:\n A custom report generation module was developed to automate learning summary creation and minimize manual efforts.\n##### * Reusable Components:\n Built highly reusable and efficient components for better maintainability and scalability.\n##### * Smooth UX:\n Implemented transitions and progress indicators for better user experience during roadmap tracking.",
-  imageurl: "https://ibb.co/273wHV4r",
+  imageurl: "https://i.ibb.co/SXw2GYCg/unnamed.png",
 },
 
 {
@@ -30,7 +30,7 @@ export class Provider extends Component {
     "A virtual conferencing platform built with Unity and Blender for immersive remote collaboration.",
   body: "###### VIRTOMO is a Unity-based 3D virtual conferencing application that simulates realistic, immersive meeting environments. Designed for users to interact in virtual spaces, it blends creative modeling with interactive user interfaces.\n\n#### Key Features:\n##### * 3D Environment:\n Developed immersive, stylized conference spaces using Blender for modeling and Unity for integration.\n##### * Lobby UI:\n Built a fully functional virtual lobby as the central navigation space with Unity UI components.\n##### * Audio Communication:\n Implemented real-time audio communication using Unity's built-in networking tools to simulate in-person interaction.\n##### * Avatar System:\n Configured avatar-based presence to enhance personal representation within the space.\n##### * Multi-Platform Support:\n Designed with potential expansion toward multi-platform support (including VR headsets).",
   imageurl:
-    "https://photos.fife.usercontent.google.com/pw/AP1GczPr1jdoZWPrOXydeVpCTL1XuBV6AbnpkssgRxGExROW0sg9SANiVZve=w414-h220-no?authuser=0",
+    "https://i.ibb.co/gL6LHpSM/Screenshot-2025-05-22-075800.png",
 },
 
 {
@@ -40,7 +40,7 @@ export class Provider extends Component {
     "A Unity VR application designed for brain stimulation through creative and logical puzzles.",
   body: "###### Virtual Mindscape is a cognitive VR application created in Unity, aimed at stimulating both hemispheres of the brain. The app uses gamified puzzles to enhance mental agility and creativity.\n\n#### Key Features:\n##### * Cognitive Puzzles:\n Integrated brain-training puzzles that stimulate both logic and creativity through immersive VR interaction.\n##### * Dual-Hemisphere Engagement:\n Activities are carefully structured to engage left-brain (logical tasks) and right-brain (creative exploration).\n##### * Immersive Experience:\n Designed VR scenes that captivate the user with atmospheric visuals and spatial sound.\n##### * Unity VR Development:\n Built using Unity’s XR framework, ensuring smooth interaction with VR controllers and devices.\n##### * Educational Value:\n Focused on mental development, problem-solving, and immersive learning through active participation.\n##### * Adaptive Challenges:\n Puzzles are scalable and can adapt in difficulty to match user progress and performance.",
   imageurl:
-    "https://media.istockphoto.com/id/1346136286/photo/brain-activity.jpg?s=612x612&w=0&k=20&c=qbvsckJr6Yxq0cbQXLZliCeXRbo9M0JEO39cK6FOb5c=",
+    "https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/10/Realidad-virtual-Virtual-Reality.jpghttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.telefonica.com%2Fen%2Fcommunication-room%2Fblog%2Fwhat-are-three-types-virtual-reality%2F&psig=AOvVaw3UENvsqKMeSZFnxTroNvBK&ust=1747968929152000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjl8vCJto0DFQAAAAAdAAAAABAE",
 }
 
     ],
