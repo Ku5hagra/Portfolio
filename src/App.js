@@ -18,19 +18,37 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show loader for 5 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+    // Listen for all images to be fully loaded
+    const images = document.images;
+    let loadedImages = 0;
+    const totalImages = images.length;
 
-    // Cleanup timer
-    return () => clearTimeout(timer);
+    if (totalImages === 0) {
+      setLoading(false);
+      return;
+    }
+
+    const onImageLoad = () => {
+      loadedImages++;
+      if (loadedImages === totalImages) {
+        setLoading(false);
+      }
+    };
+
+    for (let i = 0; i < totalImages; i++) {
+      if (images[i].complete) {
+        onImageLoad();
+      } else {
+        images[i].addEventListener("load", onImageLoad);
+        images[i].addEventListener("error", onImageLoad); // handle broken links too
+      }
+    }
   }, []);
 
   return (
     <Provider>
       {loading ? (
-        <Loader /> // Show loader if still loading
+        <Loader />
       ) : (
         <BrowserRouter>
           <Navbar />
