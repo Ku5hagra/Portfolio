@@ -1,5 +1,13 @@
 import React from "react";
-
+import html from '../assets/html.webp';
+import css from '../assets/css.webp';
+import js from '../assets/js.webp';
+import bs from '../assets/bs.webp';
+import react from '../assets/react.webp';
+import java from '../assets/java.webp';
+import python from '../assets/python.webp';
+import flask from '../assets/flask.webp';
+import mysql from '../assets/mysql.webp'
 export default function Skills() {
   return (
     <div className="container-fluid pl-0 pr-0 pt-5 pb-5 ">
@@ -9,7 +17,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow  rounded-circle"
-                src="https://i.imgur.com/3IXtcRU.jpg"
+                src= {html}
                 alt="html"
               />
               <p>
@@ -24,7 +32,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/r0dSQIu.jpg"
+                src={css}
                 alt="css"
               />
               <p>
@@ -39,7 +47,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/ksujeRW.jpg"
+                src={js}
                 alt="javascript"
               />
               <p>
@@ -54,7 +62,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/VWRENDw.jpg"
+                src={bs}
                 alt="bootstrap"
               />
               <p>
@@ -69,7 +77,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/Jz6gBge.jpg"
+                src={java}
                 alt="java"
               />
               <p>
@@ -84,7 +92,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/RszJ6EA.jpg"
+                src={python}
                 alt="python"
               />
               <p>
@@ -99,7 +107,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/yjN9Gou.jpg"
+                src={react}
                 alt="react"
               />
               <p>
@@ -114,7 +122,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid shadow rounded-circle"
-                src="https://i.imgur.com/aMBXStv.jpg"
+                src={flask}
                 alt="flask"
               />
               <p>
@@ -129,7 +137,7 @@ export default function Skills() {
             <div className="text-center ">
               <img
                 className="img-fluid  rounded-circle"
-                src="https://i.imgur.com/aWGxdxR.jpg"
+                src={mysql}
                 alt="mysql"
               />
               <p>
