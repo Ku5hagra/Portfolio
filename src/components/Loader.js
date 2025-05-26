@@ -1,7 +1,7 @@
 import React from "react";
 import "./Loader.css"; // We'll create this CSS file for styling
 
-const loader = () => {
+const Loader = () => {
   return (
     <div className="loader-container">
       <div className="spinner"></div>
