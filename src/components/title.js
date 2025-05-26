@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../assets/logo.webp';
 function Title() {
   return (
     <div
@@ -10,8 +11,7 @@ function Title() {
           <img
             tabIndex={"0"}
             className="img-fluid w-75 rounded-circle prof "
-            src="https://i.imgur.com/xgw9tvR.jpg"
-            alt=""
+            src={logo} alt="Logo" loading="lazy"
           />
         </div>
 
