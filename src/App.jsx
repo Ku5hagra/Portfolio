@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CanvasWrapper from "./components/CanvasWrapper";
 import EmbedApp from "./embed";
+import ScrollHint from "./components/ScrollHint";
+import Heading from "./components/Heading";
 
 
 function Loader({ visible }) {
@@ -67,10 +69,12 @@ export default function App() {
       <Loader visible={loading} />
 
       {!embedActive && (
-        <CanvasWrapper
+       <> <CanvasWrapper
           setEmbedActive={setEmbedActive}
           onModelLoaded={() => setModelLoaded(true)}
         />
+        <Heading />
+        <ScrollHint /> </>
       )}
 
       {embedActive && (
