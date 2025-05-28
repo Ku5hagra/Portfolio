@@ -1,21 +1,16 @@
-import React, { useRef, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useRef } from "react";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import ModelViewer from "./ModelViewer";
-import { useThree } from "@react-three/fiber";
 
 function CameraAnimation({ scrollRef, setEmbedActive }) {
   const { camera } = useThree();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       const scrollY = scrollRef.current?.scrollTop || 0;
       const threshold = 1000;
-      if (scrollY >= threshold) {
-        setEmbedActive(true);
-      } else {
-        setEmbedActive(false);
-      }
+      setEmbedActive(scrollY >= threshold);
     };
 
     const scrollEl = scrollRef.current;
@@ -36,7 +31,7 @@ function CameraAnimation({ scrollRef, setEmbedActive }) {
   return null;
 }
 
-export default function CanvasWrapper({ setEmbedActive }) {
+export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
   const scrollRef = useRef();
 
   return (
@@ -47,8 +42,8 @@ export default function CanvasWrapper({ setEmbedActive }) {
           position: "absolute",
           top: 0,
           left: 0,
-          height: "100vh",
           width: "100vw",
+          height: "100vh",
           overflowY: "scroll",
           zIndex: 99,
         }}
@@ -56,11 +51,14 @@ export default function CanvasWrapper({ setEmbedActive }) {
         <div style={{ height: "300vh" }} />
       </div>
 
-      <Canvas camera={{ position: [0, 0, 10], fov: 35 }}>
+      <Canvas
+        camera={{ position: [0, 0, 10], fov: 35 }}
+        style={{ position: "fixed", top: 0, left: 0 }}
+      >
         <ambientLight intensity={0.6} />
         <directionalLight position={[2, 2, 2]} />
         <Environment preset="city" />
-        <ModelViewer />
+        <ModelViewer onLoaded={onModelLoaded} />
         <CameraAnimation scrollRef={scrollRef} setEmbedActive={setEmbedActive} />
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
