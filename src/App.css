@@ -1,90 +1,200 @@
-.prof{
-  box-shadow: 0 0 80px black;
-}
-.prof:focus{
- animation-name: prof;
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
-  /* animation-iteration-count: infinite; */
-}
-.prof:active{
-animation: none;
-}
-@keyframes prof{
-  0%{ transform: rotateY(720deg);}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.v{
-  overflow: auto;
+/* Logo & Animations */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-.v::-webkit-scrollbar{
-  display: none;
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
-.v img{
-  height:100px;
-  width:100px;
-  border-image: linear-gradient(45deg, red, blue) 1;
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.swipe{
-  position: relative;
- animation-name: swipe;
- animation-duration: 4s;
- animation-iteration-count: infinite;
- animation-timing-function: ease-in-out;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-@keyframes swipe {
-  0%{right: 0px;}
-  50%{right: 80px;}
-  100%{right: 0px}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
-.v .card{
-  border-radius: 700px;
+
+/* Card */
+.card {
+  padding: 2em;
+  transition: transform 0.5s ease-out;
 }
-.v p{
-  font-size:20px;
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 8px 5px #f3ff45;
 }
-.contact{
-  background-image: linear-gradient(black ,rgb(45, 45, 184));
-}
-.t{
+
+/* Titles */
+.t {
   text-shadow: 0 0 8px rgb(255, 255, 254);
 }
-.nav{
+
+/* Profile image */
+.prof {
+  box-shadow: 0 0 80px black;
+}
+.prof:focus {
+  animation: prof 3s ease-out;
+}
+.prof:active {
+  animation: none;
+}
+@keyframes prof {
+  0% {
+    transform: rotateY(720deg);
+  }
+}
+
+/* Skills swiper */
+.v {
+  overflow: auto;
+}
+.v::-webkit-scrollbar {
+  display: none;
+}
+.v img {
+  height: 100px;
+  width: 100px;
+  border-image: linear-gradient(45deg, red, blue) 1;
+}
+.v p {
+  font-size: 20px;
+}
+
+/* Skill animation (using transform instead of right) */
+.swipe {
+  position: relative;
+  animation: swipe 4s infinite ease-in-out;
+}
+@keyframes swipe {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Contact */
+.contact {
+  background-image: linear-gradient(black, rgb(45, 45, 184));
+}
+
+/* Navbar */
+.nav {
   border-radius: 10px;
-  
 }
-.nohover:hover{
+.navbar {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+/* Remove hover styling */
+.nohover:hover,
+.nohover:visited {
   -webkit-text-fill-color: white !important;
-   text-decoration: none;
+  text-decoration: none;
 }
-.nohover:visited{
-   -webkit-text-fill-color:white!important;
-    text-decoration: none;
-}
-.gif{
+
+/* Animated GIF styling */
+.gif {
   border-radius: 100px;
-  background-image: radial-gradient( to right bottom, rgb(61, 122, 236),rgb(51, 195, 252),rgb(132, 221, 143),rgb(98, 238, 98));
-}
-.gif{
+  background-image: radial-gradient(to right bottom, rgb(61, 122, 236), rgb(51, 195, 252), rgb(132, 221, 143), rgb(98, 238, 98));
   animation: gif 10s infinite;
 }
-@keyframes gif{
-  0%{background-position:left;}
- 100%{background-position:right;}
-
+@keyframes gif {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
-.item{
+
+/* Item alignment */
+.item {
   display: flex;
   align-items: center;
 }
-.card:hover {
-  
-  
-  transform:scale(1.02);
-  
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  box-shadow: 0 0 8px 5px #f3ff45; 
-transform: 1s;
-  
+
+/* Loader styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, rgb(135, 197, 199), rgb(61, 122, 236), rgb(156, 108, 235), rgb(96, 35, 121));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #ffffff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-text {
+  color: #fff;
+  margin-top: 20px;
+  font-weight: 300;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+/* Webtitle responsiveness */
+.webtitle-section {
+  background-color: #000;
+  overflow-x: hidden;
+}
+@media (max-width: 576px) {
+  .webtitle-section h2 {
+    font-size: 1.4rem;
+  }
+  .webtitle-section h4 {
+    font-size: 1.1rem;
+  }
+}
+.site-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100vh; /* pushes actual site below the model view */
+  background: white;
 }

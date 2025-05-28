@@ -1,0 +1,22 @@
+<!-- public/inner.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Embedded Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      html, body, #rooti {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rooti"></div>
+    <!-- Embed the React app for the portfolio -->
+    <script type="module" src="/src/embed.jsx"></script>
+  </body>
+</html>
