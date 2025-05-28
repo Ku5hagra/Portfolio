@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useGLTF, Html } from "@react-three/drei";
 import home from "../assets/home.png";
 
 export default function ModelViewer({ onLoaded }) {
   const { scene } = useGLTF("/computer.glb");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
+  // Wait for both: GLTF + <img> in Html
   useEffect(() => {
-    if (scene && onLoaded) {
-      onLoaded();
-      console.log("✅ 3D model loaded");
+    if (scene && imageLoaded && onLoaded) {
+      onLoaded(); // ✅ Only when both are ready
     }
-  }, [scene, onLoaded]);
+  }, [scene, imageLoaded, onLoaded]);
 
   return (
     <group position={[0, 0, 0]} scale={[3, 3, 3]}>
@@ -35,6 +36,7 @@ export default function ModelViewer({ onLoaded }) {
             src={home}
             alt="Preview"
             style={{ width: "100%", height: "100%", pointerEvents: "none" }}
+            onLoad={() => setImageLoaded(true)} // ✅ Wait for visible image load!
           />
         </Html>
       </group>
