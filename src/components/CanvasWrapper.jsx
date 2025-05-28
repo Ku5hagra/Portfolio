@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import React, { useRef, useEffect, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import ModelViewer from "./ModelViewer";
 
 function CameraAnimation({ scrollRef, setEmbedActive }) {
   const { camera } = useThree();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = scrollRef.current?.scrollTop || 0;
       const threshold = 1000;
@@ -33,9 +33,32 @@ function CameraAnimation({ scrollRef, setEmbedActive }) {
 
 export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
   const scrollRef = useRef();
+  const canvasRef = useRef();
+  const [interacting, setInteracting] = useState(false);
+
+  // Toggle pointer events during interactions
+  useEffect(() => {
+    const canvasEl = canvasRef.current;
+
+    const enableInteraction = () => {
+      setInteracting(true);
+    };
+    const disableInteraction = () => {
+      setInteracting(false);
+    };
+
+    canvasEl.addEventListener("pointerdown", enableInteraction);
+    window.addEventListener("pointerup", disableInteraction);
+
+    return () => {
+      canvasEl.removeEventListener("pointerdown", enableInteraction);
+      window.removeEventListener("pointerup", disableInteraction);
+    };
+  }, []);
 
   return (
     <>
+      {/* Scroll container */}
       <div
         ref={scrollRef}
         style={{
@@ -45,15 +68,25 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
           width: "100vw",
           height: "100vh",
           overflowY: "scroll",
-          zIndex: 99,
+          zIndex: 1, // scroll container below canvas
         }}
       >
         <div style={{ height: "300vh" }} />
       </div>
 
+      {/* 3D Canvas */}
       <Canvas
+        ref={canvasRef}
         camera={{ position: [0, 0, 10], fov: 35 }}
-        style={{ position: "fixed", top: 0, left: 0 }}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 2, // above scroll container
+          pointerEvents: interacting ? "auto" : "none", // dynamic!
+        }}
       >
         <ambientLight intensity={0.6} />
         <directionalLight position={[2, 2, 2]} />
