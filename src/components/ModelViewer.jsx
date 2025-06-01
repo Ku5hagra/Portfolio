@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import home from "../assets/home.png";
+import home from "../assets/home.webp";
 
 export default function ModelViewer({ onLoaded }) {
   const { scene } = useGLTF("/computer.glb");
