@@ -3,12 +3,13 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import ModelViewer from "./ModelViewer";
 
-function CameraAnimation({ scrollRef, setEmbedActive }) {
+function CameraAnimation({ scrollRef, setEmbedActive, setScrollY }) {
   const { camera } = useThree();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = scrollRef.current?.scrollTop || 0;
+      setScrollY(scrollY); // <-- Pass scroll to parent
       const threshold = 1000;
       setEmbedActive(scrollY >= threshold);
     };
@@ -16,7 +17,7 @@ function CameraAnimation({ scrollRef, setEmbedActive }) {
     const scrollEl = scrollRef.current;
     scrollEl?.addEventListener("scroll", handleScroll);
     return () => scrollEl?.removeEventListener("scroll", handleScroll);
-  }, [scrollRef, setEmbedActive]);
+  }, [scrollRef, setEmbedActive, setScrollY]);
 
   useFrame(() => {
     const scrollY = scrollRef.current?.scrollTop || 0;
@@ -35,6 +36,7 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
   const scrollRef = useRef();
   const canvasRef = useRef();
   const [interacting, setInteracting] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   // Toggle pointer events during interactions
   useEffect(() => {
@@ -77,7 +79,7 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
       {/* 3D Canvas */}
       <Canvas
         ref={canvasRef}
-        camera={{ position: [0, 0, 10], fov: 35 }}
+        camera={{ position: [0.5, 0, 10], fov: 35 }}
         style={{
           position: "fixed",
           top: 0,
@@ -91,8 +93,8 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
         <ambientLight intensity={0.6} />
         <directionalLight position={[2, 2, 2]} />
         <Environment preset="city" />
-        <ModelViewer onLoaded={onModelLoaded} />
-        <CameraAnimation scrollRef={scrollRef} setEmbedActive={setEmbedActive} />
+        <ModelViewer onLoaded={onModelLoaded} scrollY={scrollY}/>
+        <CameraAnimation scrollRef={scrollRef} setEmbedActive={setEmbedActive} setScrollY={setScrollY}/>
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
     </>
