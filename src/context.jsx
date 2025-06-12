@@ -25,6 +25,8 @@ export class Provider extends Component {
 ##### * Interactive Elements:
  JavaScript is used to add interactive elements like animated transitions, smooth scrolling, and form validations. These help engage visitors and provide a dynamic user experience.`,
         imageurl: "https://i.imgur.com/7zuvbzo.png",
+          github: "https://github.com/Ku5hagra/portfolio", // Replace with actual repo
+    live: "https://kushagra-agrawal.netlify.app/",           // Replace with actual deployment
       },
       {
         id: 2,
@@ -46,6 +48,8 @@ export class Provider extends Component {
 ##### * Smooth UX:
  Implemented transitions and progress indicators for better user experience during roadmap tracking.`,
         imageurl: "https://i.ibb.co/SXw2GYCg/unnamed.png",
+         github: "https://github.com/Ku5hagra/progresspal", // Replace with actual repo
+    live: null,
       },
       {
         id: 3,
@@ -65,6 +69,8 @@ export class Provider extends Component {
 ##### * Multi-Platform Support:
  Designed with potential expansion towards VR headsets and other platforms.`,
         imageurl: "https://i.ibb.co/gL6LHpSM/Screenshot-2025-05-22-075800.png",
+         github: "https://github.com/Ku5hagra/Confrence",
+    live: null,
       },
       {
         id: 4,
@@ -86,6 +92,8 @@ export class Provider extends Component {
 ##### * Adaptive Challenges:
  Puzzles scale in difficulty to match user progress and performance.`,
         imageurl: "https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/10/Realidad-virtual-Virtual-Reality.jpg",
+        github: null,
+    live: null,
       }
     ],
     blogs: [
