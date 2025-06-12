@@ -8,7 +8,8 @@ export default function Blog() {
     <Consumer>
       {({ blogs }) => (
         <div className="container my-5 ">
-          <h2 className="text-center mb-4">Blogs</h2>
+          <h2 style={{color: "#00f0ff",
+              textShadow: "0 0 6px #00f0ff"}} className="text-center mb-4 fw-light">Blogs</h2>
           <div className="row">
             {blogs.slice(0, 3).map((blog) => (
               <div key={blog.id} className="col-md-4 mb-4">

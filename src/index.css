@@ -1,4 +1,5 @@
 /* Root variables and base typography */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -34,15 +35,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /* Final background for all screens */
-  background-image: linear-gradient(
-    225deg,
-    rgb(135, 197, 199),
-    rgb(61, 122, 236),
-    rgb(156, 108, 235),
-    rgb(96, 35, 121),
-    rgb(54, 12, 28)
-  );
+ background-image: linear-gradient(
+  135deg,
+  #0f0c29,
+  #302b63,
+  #24243e,
+  #ff416c,
+  #ff4b2b,
+  #00f2fe,
+  #4facfe
+);
+
+ background-size: 400% 400%;
   overflow-x: hidden;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Code block font */
@@ -105,6 +123,7 @@ button:focus-visible {
 
 .image-container {
   position: relative;
+  overflow: hidden;
 }
 
 .overlay {
@@ -113,6 +132,8 @@ button:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
   display: flex;
@@ -120,7 +141,10 @@ button:focus-visible {
   align-items: center;
   transition: opacity 0.3s ease;
   z-index: 2;
+  pointer-events: auto;
 }
+
+
 
 .image-container:hover .overlay {
   opacity: 1;
@@ -132,5 +156,165 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0; /* Lower than overlay */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-card .overlay a:hover {
+  color: #00f0ff !important;
+}
+
+/* title */
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  color: #4a90e2;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.webtitle h2 span {
+  text-shadow: 0 0 8px #4a90e2, 0 0 16px #4a90e2;
+  color: #4a90e2;
+}
+
+/* Glowing animated text */
+.typewriter {
+  text-shadow: 0 0 6px #00cfff, 0 0 12px #00cfff;
+  font-weight: bold;
+  color: #00f0ff;
+}
+
+/* Optional: style "I am a" */
+.webtitle h4 {
+  color: #ffffff;
+  text-shadow: 0 0 6px #333, 0 0 12px #000;
+}
+/* Glowing effect for the entire h2 line including "Hi, I am" */
+.webtitle h2 {
+  color: #ffffff;
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 6px #4a90e2,
+    0 0 10px #4a90e2;
+}
+
+/* Optional: increase font weight if it's too thin */
+.webtitle h2 span {
+  font-weight: 600;
+}
+
+
+
+/* blog */
+.blog-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border-radius: 16px;
+  background-color: #1c1c1c;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+.blog-card .card-title {
+  color: #00f0ff;
+  text-shadow: 0 0 6px #00cfff, 0 0 12px #00cfff;
+}
+.project-card .card-title {
+  color: #00f0ff;
+  text-shadow: 0 0 6px #00cfff, 0 0 12px #00cfff;
+}
+.blog-card .card-text {
+  color: #ccc;
+}
+
+.contact {
+  position: relative;
+  overflow: hidden;
   z-index: 1;
+}
+
+.neon-squares-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.neon-squares-bg span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+  opacity: 0.15;
+  animation: rotateSquare 30s linear infinite;
+}
+
+/* Random position, size, and animation using nth-child */
+.neon-squares-bg span:nth-child(n) {
+  top: calc(100% * var(--top, 0.5));
+  left: calc(100% * var(--left, 0.5));
+  animation-duration: calc(15s + (var(--i, 1) * 2s));
+}
+
+/* Add randomness using nth-child trick */
+.neon-squares-bg span:nth-child(1) { top: 10%; left: 20%; }
+.neon-squares-bg span:nth-child(2) { top: 30%; left: 80%; }
+.neon-squares-bg span:nth-child(3) { top: 60%; left: 10%; }
+.neon-squares-bg span:nth-child(4) { top: 70%; left: 50%; }
+.neon-squares-bg span:nth-child(5) { top: 20%; left: 60%; }
+/* ... repeat pattern for all 20 squares */
+.neon-squares-bg span:nth-child(6)  { top: 5%; left: 5%; }
+.neon-squares-bg span:nth-child(7)  { top: 15%; left: 75%; }
+.neon-squares-bg span:nth-child(8)  { top: 40%; left: 90%; }
+.neon-squares-bg span:nth-child(9)  { top: 85%; left: 25%; }
+.neon-squares-bg span:nth-child(10) { top: 95%; left: 60%; }
+.neon-squares-bg span:nth-child(11) { top: 12%; left: 35%; }
+.neon-squares-bg span:nth-child(12) { top: 55%; left: 72%; }
+.neon-squares-bg span:nth-child(13) { top: 33%; left: 45%; }
+.neon-squares-bg span:nth-child(14) { top: 75%; left: 5%; }
+.neon-squares-bg span:nth-child(15) { top: 90%; left: 88%; }
+.neon-squares-bg span:nth-child(16) { top: 42%; left: 30%; }
+.neon-squares-bg span:nth-child(17) { top: 22%; left: 10%; }
+.neon-squares-bg span:nth-child(18) { top: 66%; left: 66%; }
+.neon-squares-bg span:nth-child(19) { top: 28%; left: 85%; }
+.neon-squares-bg span:nth-child(20) { top: 49%; left: 15%; }
+
+@keyframes rotateSquare {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }

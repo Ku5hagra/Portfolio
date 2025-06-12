@@ -26,7 +26,7 @@ export class Provider extends Component {
  JavaScript is used to add interactive elements like animated transitions, smooth scrolling, and form validations. These help engage visitors and provide a dynamic user experience.`,
         imageurl: "https://i.imgur.com/7zuvbzo.png",
           github: "https://github.com/Ku5hagra/portfolio", // Replace with actual repo
-    live: "https://kushagra-agrawal.netlify.app/",           // Replace with actual deployment
+    live: "https://kushagraagrawal.netlify.app/",           // Replace with actual deployment
       },
       {
         id: 2,

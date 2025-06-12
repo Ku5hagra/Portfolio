@@ -21,11 +21,16 @@ export default function Contact() {
     e.target.reset();
   };
 
-  return (
+  return ( 
     <div
       className="container-fluid contact d-flex align-items-center"
       style={{ minHeight: "100vh", backgroundColor: "#000" }}
-    >
+    ><div className="neon-squares-bg">
+       {Array.from({ length: 20 }).map((_, i) => (
+      <span key={i}></span>
+    ))}
+
+    </div>
       <Zoom className="w-100">
         <div className="row justify-content-center w-100">
           <div className="col-12 text-center mb-5">

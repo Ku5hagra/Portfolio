@@ -3,18 +3,40 @@ import { Link } from 'react-router-dom';
 
 function BlogCard({ blog }) {
   return (
-    <div className="card h-100 p-0">
-      <img
-        src={blog.imageurl}
-        alt={blog.title}
-        className="card-img-top"
-        style={{ height: '250px', objectFit: 'cover' }}
-      />
-      <div className="card-body">
-        <h5 className="card-title">{blog.title}</h5>
-        <p className="card-text">{blog.description}</p>
+    <div
+      className="card h-100 position-relative border-0 shadow-lg blog-card overflow-hidden"
+      style={{
+        background: "#1c1c1c",
+        borderRadius: "16px",
+        transition: "transform 0.3s ease",
+      }}
+    >
+      <div className="image-container position-relative">
+        <img
+          src={blog.imageurl}
+          alt={blog.title}
+          className="card-img-top"
+          style={{
+            height: "230px",
+            objectFit: "cover",
+            borderTopLeftRadius: "16px",
+            borderTopRightRadius: "16px",
+          }}
+        />
       </div>
-      <Link to={`/blog/${blog.id}`} className="stretched-link" />
+
+      <div className="card-body text-light text-center px-3 pb-4">
+        <h5 className="card-title " style={{ color: "#00f0ff" }}>
+          {blog.title}
+        </h5>
+        <p className="card-text small ">{blog.description}</p>
+      </div>
+
+      <Link
+        to={`/blog/${blog.id}`}
+        className="stretched-link"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      />
     </div>
   );
 }

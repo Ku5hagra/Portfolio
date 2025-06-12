@@ -6,6 +6,7 @@ import Heading from "./components/Heading";
 
 
 function Loader({ visible }) {
+  
   return (
     <div
       style={{
@@ -57,12 +58,15 @@ function Loader({ visible }) {
 }
 
 export default function App() {
+
   const [embedActive, setEmbedActive] = useState(false);
   const [modelLoaded, setModelLoaded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const homeImageSrc = "/home.png";
   const loading = !(modelLoaded && imageLoaded);
+
+
 
   return (
     <>
