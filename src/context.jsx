@@ -1,4 +1,12 @@
 import React, { Component } from "react";
+import pf from "./assets/pf.webp";
+import pp from "./assets/pp.webp";
+import virt from "./assets/virt.webp";
+import vme from "./assets/vme.webp";
+import easy from "./assets/easy.webp";
+import ai from "./assets/ai.webp";
+import vr from "./assets/vr.webp";
+import programming from "./assets/programming.webp";
 
 const Context = React.createContext();
 
@@ -24,7 +32,7 @@ export class Provider extends Component {
  Various React libraries are incorporated to enhance functionality and interactivity. These include React Router for navigation, React Icons for icons, and animation libraries for engaging effects.
 ##### * Interactive Elements:
  JavaScript is used to add interactive elements like animated transitions, smooth scrolling, and form validations. These help engage visitors and provide a dynamic user experience.`,
-        imageurl: "https://i.imgur.com/7zuvbzo.png",
+        imageurl: pf,
           github: "https://github.com/Ku5hagra/portfolio", // Replace with actual repo
     live: "https://kushagraagrawal.netlify.app/",           // Replace with actual deployment
       },
@@ -47,7 +55,7 @@ export class Provider extends Component {
  Built highly reusable and efficient components for better maintainability and scalability.
 ##### * Smooth UX:
  Implemented transitions and progress indicators for better user experience during roadmap tracking.`,
-        imageurl: "https://i.ibb.co/SXw2GYCg/unnamed.png",
+        imageurl: pp,
          github: "https://github.com/Ku5hagra/progresspal", // Replace with actual repo
     live: null,
       },
@@ -68,7 +76,7 @@ export class Provider extends Component {
  Configured avatar-based presence to enhance personal representation within the space.
 ##### * Multi-Platform Support:
  Designed with potential expansion towards VR headsets and other platforms.`,
-        imageurl: "https://i.ibb.co/gL6LHpSM/Screenshot-2025-05-22-075800.png",
+        imageurl: virt,
          github: "https://github.com/Ku5hagra/Confrence",
     live: null,
       },
@@ -91,7 +99,7 @@ export class Provider extends Component {
  Focused on mental development, problem-solving, and immersive learning through active participation.
 ##### * Adaptive Challenges:
  Puzzles scale in difficulty to match user progress and performance.`,
-        imageurl: "https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/10/Realidad-virtual-Virtual-Reality.jpg",
+        imageurl: vme,
         github: null,
     live: null,
       }
@@ -110,7 +118,7 @@ export class Provider extends Component {
 3. **Python:** Known for its readability and simplicity, Python is an excellent choice for beginner programmers. Its clear syntax and extensive libraries make it easy to grasp fundamental programming concepts and build functional applications.
 
 4. **WordPress:** If you're interested in creating websites without diving deep into coding, WordPress is a user-friendly platform. With its intuitive interface and abundant themes and plugins, you can quickly build and manage websites with minimal technical knowledge.`,
-        imageurl: "https://blog.100mentors.com/wp-content/uploads/2017/01/easytouse.jpg",
+        imageurl: easy,
       },
       {
         id: 2,
@@ -131,7 +139,7 @@ export class Provider extends Component {
 - **Automated Testing:** AI can automate testing processes, identifying bugs and suggesting improvements, thereby enhancing website quality and reducing development time.
 
 - **Voice-Enabled Interfaces:** With the rise of voice assistants, AI allows developers to create voice-enabled interactions for more accessible browsing experiences.`,
-        imageurl: "https://img.freepik.com/free-vector/java-developer-smartphone-software-javascript-coding-writing-application-css-programming-html-source-code-tampering-mobile-program-vector-isolated-concept-metaphor-illustration_335657-4297.jpg?w=740&t=st=1689085456~exp=1689086056~hmac=e4f5f030494ba186206895efe8cbe692ee77009b15fce691ad31c7fe03fdb437",
+        imageurl: ai,
       },
       {
         id: 3,
@@ -148,7 +156,7 @@ export class Provider extends Component {
 - **Stay Updated:** Follow reputable programming blogs, podcasts, and YouTube channels to stay informed about the latest updates, frameworks, and best practices.
 
 - **Focus on Fundamentals:** Dedicate time to study fundamental data structures and algorithms. Solve challenges on platforms like LeetCode or HackerRank to strengthen your problem-solving skills.`,
-        imageurl: "https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg",
+        imageurl: programming,
       },
       {
         id: 4,
@@ -173,7 +181,7 @@ export class Provider extends Component {
 - **Code Splitting:** Use React.lazy and Suspense to split code and improve load times.
 
 By incorporating these tips, you can write cleaner, more efficient React code and create performant applications.`,
-        imageurl: "https://img.freepik.com/free-vector/gradient-metaverse-background_23-2149257046.jpg",
+        imageurl: vr,
       }
     ]
   };
