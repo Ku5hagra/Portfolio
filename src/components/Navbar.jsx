@@ -65,7 +65,7 @@ function Navbar() {
               Contact
             </Nav.Link>
             <Nav.Link
-              href="https://drive.google.com/uc?export=download&id=1z7c3yn112EQj7JS89F9bHx5uxNe8OU-h"
+              href="https://drive.google.com/file/d/1Xvm0T4JAOhSQeG6nrx22YmId4znC5cFT/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
