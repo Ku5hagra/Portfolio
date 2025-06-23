@@ -6,6 +6,7 @@ import vme from "./assets/vme.webp";
 import easy from "./assets/easy.webp";
 import ai from "./assets/ai.webp";
 import vr from "./assets/vr.webp";
+import gemini from "./assets/gemini.webp";
 import programming from "./assets/programming.webp";
 
 const Context = React.createContext();
@@ -102,7 +103,32 @@ export class Provider extends Component {
         imageurl: vme,
         github: null,
     live: null,
-      }
+      },
+      {
+  id: 5,
+  title: "GEMINI CLONE – AI Chat Assistant with History",
+  description: "A Gemini Flash 1.5 API-powered chatbot built with Vite + React, supporting chat history and session resets.",
+  body: `###### Gemini Clone is a frontend-only AI assistant app built using Vite and React. It interacts with Google’s Gemini Flash 1.5 free API to generate smart, human-like responses in real-time.
+
+#### Key Features:
+##### * Gemini Flash 1.5 Integration:
+ Utilizes the free version of Google's Gemini API to handle chat queries with accurate, context-aware replies.
+##### * Persistent Chat History:
+ Stores and displays previous messages to allow users to revisit past interactions seamlessly.
+##### * New Chat Support:
+ Users can initiate a fresh conversation at any point with the click of a button.
+##### * Vite + React Development:
+ Built using Vite for fast bundling and React for efficient component handling and rendering.
+##### * Fully Static Frontend:
+ No backend or database required — everything is managed in the browser, ideal for rapid deployment.
+##### * Lightweight & Responsive:
+ Clean UI with responsive design for both desktop and mobile devices.`,
+
+  imageurl: gemini,
+  github: "https://github.com/Ku5hagra/gemini-clone",
+  live: "https://kushagra-gemini.netlify.app/",
+}
+
     ],
     blogs: [
       {
