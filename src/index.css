@@ -1,9 +1,13 @@
 /* Root variables and base typography */
+* {
+  font-family: "Fraunces", sans-serif;
+  /* font-family: 'Pacifico', cursive; */
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -28,25 +32,25 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* Final background for all screens */
- background-image: linear-gradient(
-  135deg,
-  #0f0c29,
-  #302b63,
-  #65bba5,
-  #5395b8,
-  #2ba3ff,
-  #0000fe,
-  #954ffe
-);
+  background-image: linear-gradient(
+    150deg,
+    #300c0c 0%,
+    #4a0a0a 20%,
+    #600000 40%,
+    #3c0020 60%,
+    #080141 75%,
+    #14002f 90%,
+    #210052 100%
+  );
 
- background-size: 400% 400%;
+  background-size: 400% 400%;
   overflow-x: hidden;
   animation: gradientShift 10s ease infinite;
 }
@@ -65,7 +69,7 @@ body {
 
 /* Code block font */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -144,8 +148,6 @@ button:focus-visible {
   pointer-events: auto;
 }
 
-
-
 .image-container:hover .overlay {
   opacity: 1;
 }
@@ -188,7 +190,8 @@ button:focus-visible {
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -196,8 +199,10 @@ button:focus-visible {
   }
 }
 .webtitle h2 span {
-  text-shadow: 0 0 8px #4a90e2, 0 0 16px #4a90e2;
-  color: #4a90e2;
+  font-family: "Pacifico", cursive;
+  font-weight: 600;
+   color: #ffffff;
+    text-shadow: 0 0 8px #0033ff, 0 0 16px #7a94fa;
 }
 
 /* Glowing animated text */
@@ -215,18 +220,13 @@ button:focus-visible {
 /* Glowing effect for the entire h2 line including "Hi, I am" */
 .webtitle h2 {
   color: #ffffff;
-  text-shadow:
-    0 0 3px #ffffff,
-    0 0 6px #4a90e2,
-    0 0 10px #4a90e2;
+  text-shadow: 0 0 3px #ffffff, 0 0 6px #4a90e2, 0 0 10px #4a90e2;
 }
 
 /* Optional: increase font weight if it's too thin */
 .webtitle h2 span {
   font-weight: 600;
 }
-
-
 
 /* blog */
 .blog-card {
@@ -241,7 +241,8 @@ button:focus-visible {
   transform: translateY(-8px);
 }
 
-.blog-card .card-title {
+.blog-card .card-title,
+.about h4 {
   color: #00f0ff;
   text-shadow: 0 0 6px #00cfff, 0 0 12px #00cfff;
 }
@@ -285,27 +286,87 @@ button:focus-visible {
 }
 
 /* Add randomness using nth-child trick */
-.neon-squares-bg span:nth-child(1) { top: 10%; left: 20%; }
-.neon-squares-bg span:nth-child(2) { top: 30%; left: 80%; }
-.neon-squares-bg span:nth-child(3) { top: 60%; left: 10%; }
-.neon-squares-bg span:nth-child(4) { top: 70%; left: 50%; }
-.neon-squares-bg span:nth-child(5) { top: 20%; left: 60%; }
+.neon-squares-bg span:nth-child(1) {
+  top: 10%;
+  left: 20%;
+}
+.neon-squares-bg span:nth-child(2) {
+  top: 30%;
+  left: 80%;
+}
+.neon-squares-bg span:nth-child(3) {
+  top: 60%;
+  left: 10%;
+}
+.neon-squares-bg span:nth-child(4) {
+  top: 70%;
+  left: 50%;
+}
+.neon-squares-bg span:nth-child(5) {
+  top: 20%;
+  left: 60%;
+}
 /* ... repeat pattern for all 20 squares */
-.neon-squares-bg span:nth-child(6)  { top: 5%; left: 5%; }
-.neon-squares-bg span:nth-child(7)  { top: 15%; left: 75%; }
-.neon-squares-bg span:nth-child(8)  { top: 40%; left: 90%; }
-.neon-squares-bg span:nth-child(9)  { top: 85%; left: 25%; }
-.neon-squares-bg span:nth-child(10) { top: 95%; left: 60%; }
-.neon-squares-bg span:nth-child(11) { top: 12%; left: 35%; }
-.neon-squares-bg span:nth-child(12) { top: 55%; left: 72%; }
-.neon-squares-bg span:nth-child(13) { top: 33%; left: 45%; }
-.neon-squares-bg span:nth-child(14) { top: 75%; left: 5%; }
-.neon-squares-bg span:nth-child(15) { top: 90%; left: 88%; }
-.neon-squares-bg span:nth-child(16) { top: 42%; left: 30%; }
-.neon-squares-bg span:nth-child(17) { top: 22%; left: 10%; }
-.neon-squares-bg span:nth-child(18) { top: 66%; left: 66%; }
-.neon-squares-bg span:nth-child(19) { top: 28%; left: 85%; }
-.neon-squares-bg span:nth-child(20) { top: 49%; left: 15%; }
+.neon-squares-bg span:nth-child(6) {
+  top: 5%;
+  left: 5%;
+}
+.neon-squares-bg span:nth-child(7) {
+  top: 15%;
+  left: 75%;
+}
+.neon-squares-bg span:nth-child(8) {
+  top: 40%;
+  left: 90%;
+}
+.neon-squares-bg span:nth-child(9) {
+  top: 85%;
+  left: 25%;
+}
+.neon-squares-bg span:nth-child(10) {
+  top: 95%;
+  left: 60%;
+}
+.neon-squares-bg span:nth-child(11) {
+  top: 12%;
+  left: 35%;
+}
+.neon-squares-bg span:nth-child(12) {
+  top: 55%;
+  left: 72%;
+}
+.neon-squares-bg span:nth-child(13) {
+  top: 33%;
+  left: 45%;
+}
+.neon-squares-bg span:nth-child(14) {
+  top: 75%;
+  left: 5%;
+}
+.neon-squares-bg span:nth-child(15) {
+  top: 90%;
+  left: 88%;
+}
+.neon-squares-bg span:nth-child(16) {
+  top: 42%;
+  left: 30%;
+}
+.neon-squares-bg span:nth-child(17) {
+  top: 22%;
+  left: 10%;
+}
+.neon-squares-bg span:nth-child(18) {
+  top: 66%;
+  left: 66%;
+}
+.neon-squares-bg span:nth-child(19) {
+  top: 28%;
+  left: 85%;
+}
+.neon-squares-bg span:nth-child(20) {
+  top: 49%;
+  left: 15%;
+}
 
 @keyframes rotateSquare {
   0% {

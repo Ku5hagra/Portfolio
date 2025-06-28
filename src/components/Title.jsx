@@ -37,7 +37,7 @@ function Title() {
           setIndex((prev) => (prev + 1) % roles.length);
         }
       }
-    }, deleting ? 40 : 100); // typing speed
+    }, deleting ? 30 : 80); // typing speed
 
     return () => clearTimeout(timeout);
   }, [subIndex, deleting, index]);
@@ -59,7 +59,7 @@ function Title() {
           <div className="pl-2 font-weight-light" style={{ fontSize: "30px" }}>
             <h2 className="font-weight-light pt-2">
               Hi, I am{" "}
-              <span style={{ color: "darkblue" }}>
+              <span>
                 <b>Kushagra Agrawal</b>
               </span>
             </h2>

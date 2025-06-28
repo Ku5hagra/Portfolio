@@ -59,12 +59,13 @@ export default function ModelViewer({ onLoaded, scrollY }) {
       <primitive object={scene} />
       <group scale={[0.23, 0.24, 0.23]}>
         <Html
-          position={[-0.36, 0.38, -0.5]}
+          position={[-0.36, 0.38, -0.510114]}
           transform
           occlude
           distanceFactor={1.2}
           style={{
             width: "1024px",
+            opacity:1,
             height: "600px",
             border: "none",
             overflow: "hidden",

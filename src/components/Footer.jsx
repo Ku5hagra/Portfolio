@@ -10,7 +10,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Footer() {
   return (
     <footer>
-      <div className="container-fluid" style={{ backgroundColor: "black" }}>
+      <div className="container-fluid" style={{ backgroundColor:"black", boxShadow: "0 0 800px 5px rgb(0, 0, 0) "}}>
         <h4 className="text-light text-center pt-5">
           Do you want to work with me?
         </h4>

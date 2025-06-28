@@ -31,14 +31,14 @@ export default function Skills() {
             className="col-4 col-sm-2 col-md-2 mb-4  text-center swipe"
             style={{ minWidth: "120px" }}
           >
-            <img
+            <div className="gradient-border"><img
               src={skill.img}
               alt={skill.name}
               className="img-fluid rounded-circle shadow"
               style={{ maxWidth: "100px" }}
-            />
+            /></div>
             <p className="mt-2 mb-0">
-              <span style={{ color: "yellow" }}>
+              <span className="star" style={{ color: "yellow" }}>
                 {"★".repeat(skill.rating)}
               </span>
               <span style={{ color: "black" }}>

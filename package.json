@@ -20,6 +20,7 @@
     "@react-three/fiber": "^9.1.2",
     "bootstrap": "^5.3.6",
     "emailjs-com": "^3.2.0",
+    "matter-js": "^0.20.0",
     "react": "^19.1.0",
     "react-awesome-reveal": "^4.3.1",
     "react-bootstrap": "^2.10.10",

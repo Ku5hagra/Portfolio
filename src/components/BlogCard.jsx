@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 function BlogCard({ blog }) {
   return (
     <div
-      className="card h-100 position-relative border-0 shadow-lg blog-card overflow-hidden"
-      style={{
-        background: "#1c1c1c",
-        borderRadius: "16px",
-        transition: "transform 0.3s ease",
-      }}
+      className="card h-100 position-relative border-0  blog-card overflow-hidden"
     >
       <div className="image-container position-relative">
         <img

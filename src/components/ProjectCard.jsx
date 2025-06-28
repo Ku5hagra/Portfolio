@@ -7,12 +7,13 @@ function ProjectCard({ project }) {
 
   return (
     <div
-      className="card h-100 position-relative border-0 shadow-lg project-card overflow-hidden"
-      style={{
-        background: "#1c1c1c",
-        borderRadius: "16px",
-        transition: "transform 0.3s ease",
-      }}
+      className="card h-100 position-relative border-0  project-card overflow-hidden"
+      // style={{
+      //   background: "transparent",
+      //   backdropFilter:"blur(80px)",
+      //   borderRadius: "16px",
+      //   transition: "transform 0.3s ease",
+      // }}
     >
       <div className="image-container position-relative">
         <img
