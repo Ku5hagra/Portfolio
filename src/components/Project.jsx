@@ -35,7 +35,7 @@ function Project() {
               to="/projectpage"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <h5 style={{ color: "#00f0ff" }}>See all projects →</h5>
+              <h5 style={{ color: "#00f0ff" }}>See all projects &rarr;</h5>
             </Link>
           </div>
         </div>

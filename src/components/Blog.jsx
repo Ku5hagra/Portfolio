@@ -19,7 +19,7 @@ export default function Blog() {
           </div>
           <div className="text-end  mt-3">
             <Link to="/blogpage" className="text-decoration-none text-light">
-              <h5>See All Blogs &rarr;</h5>
+              <h5 style={{ color: "#00f0ff" }}>See All Blogs &rarr;</h5>
             </Link>
           </div>
         </div>
