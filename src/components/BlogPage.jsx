@@ -8,8 +8,9 @@ export default function BlogPage() {
     <Consumer>
       {({ blogs }) => (
         <div className="p-5 container-fluid">
-          <h1 style={{ color: "black" }} className="t text-center pt-5">
-            MY <span style={{ color: "purple" }}>BLOGS</span>
+          <h1 style={{ color: "white" }} className="t text-center pt-5">
+            MY <span style={{ color: "#00f0ff",
+              textShadow: "0 0 6px #00f0ff" }}>BLOGS</span>
           </h1>
           <p className="font-weight-light text-center pb-5">
             These are some of my blogs
