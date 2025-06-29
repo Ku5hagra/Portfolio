@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import CanvasWrapper from "./components/CanvasWrapper";
 import EmbedApp from "./embed";
 import ScrollHint from "./components/ScrollHint";
@@ -7,41 +8,54 @@ import Loader from "./components/Loader";
 
 export default function App() {
   const [embedActive, setEmbedActive] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [modelLoaded, setModelLoaded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [progress, setProgress] = useState(0);
 
-  const loading = !(modelLoaded && imageLoaded);
-
-  // Simulate progress (if you don't have real % tracking from model/image)
   useEffect(() => {
-    if (loading) {
-      let p = 0;
-      const interval = setInterval(() => {
-        p += 5;
-        setProgress((prev) => Math.min(prev + 5, 100));
-        if (p >= 100 || (!loading)) {
-          clearInterval(interval);
+    // Load model
+    const loader = new GLTFLoader();
+    loader.load(
+      "/computer.glb",
+      () => {
+        console.log("✅ Model loaded");
+        setModelLoaded(true);
+      },
+      (xhr) => {
+        if (xhr.lengthComputable) {
+          const percent = (xhr.loaded / xhr.total) * 100;
+          setProgress((prev) => Math.max(prev, percent * 0.8));
         }
-      }, 200);
-      return () => clearInterval(interval);
-    } else {
+      },
+      (error) => console.error("❌ Model load error", error)
+    );
+
+    // Load image
+    const img = new Image();
+    img.src = "/home.png";
+    img.onload = () => {
+      console.log("✅ Image loaded");
+      setImageLoaded(true);
+    };
+    img.onerror = () => console.error("❌ Failed to load hidden image!");
+  }, []);
+
+  // When both are loaded, complete progress
+  useEffect(() => {
+    if (modelLoaded && imageLoaded) {
       setProgress(100);
     }
-  }, [loading]);
+  }, [modelLoaded, imageLoaded]);
+
+  const loading = !(modelLoaded && imageLoaded);
 
   return (
     <>
       <Loader visible={loading} progress={progress} />
 
-      {!embedActive && (
+      {!embedActive && !loading && (
         <>
-          <CanvasWrapper
-  setEmbedActive={setEmbedActive}
-  onModelLoaded={() => {
-    setModelLoaded(true);
-  }}
-/>
+          <CanvasWrapper setEmbedActive={setEmbedActive} />
           <Heading />
           <ScrollHint />
         </>
@@ -62,20 +76,6 @@ export default function App() {
           <EmbedApp />
         </div>
       )}
-
-      {/* Preload image to trigger imageLoaded */}
-      <img
-        src="/home.png"
-        alt="hidden preview"
-        style={{ display: "none" }}
-        onLoad={() => {
-          console.log("✅ Hidden image loaded");
-          setImageLoaded(true);
-        }}
-        onError={() => {
-          console.log("❌ Failed to load hidden image!");
-        }}
-      />
     </>
   );
 }

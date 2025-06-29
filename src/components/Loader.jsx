@@ -22,7 +22,7 @@ export default function Loader({ visible, progress = 0 }) {
       }}
     >
       <div className="ka-container">
-        <h1 className="ka-dull">KA</h1> 
+        <h1 className="ka-dull">KA</h1>
         <h2 className="text-loader">Please wait a sec</h2>
         <div
           className="ka-mask"
@@ -31,7 +31,6 @@ export default function Loader({ visible, progress = 0 }) {
           }}
         >
           <h1 className="ka-bright">KA</h1>
-         
         </div>
       </div>
 
@@ -45,7 +44,7 @@ export default function Loader({ visible, progress = 0 }) {
           font-size: 10rem;
           font-weight: bold;
           font-family: sans-serif;
-          color: #333; /* dull grey */
+          color: #333;
         }
 
         .ka-mask {
@@ -53,15 +52,15 @@ export default function Loader({ visible, progress = 0 }) {
           top: 0;
           left: 0;
           height: 100%;
-          overflow: hidden; /* <-- This clips both text + glow */
+          overflow: hidden;
           pointer-events: none;
+          transition: width 0.3s ease-out;
         }
 
         .ka-bright {
           font-size: 10rem;
           font-weight: bold;
           font-family: sans-serif;
-          
           background-clip: text;
           -webkit-background-clip: text;
           color: transparent;
@@ -71,13 +70,15 @@ export default function Loader({ visible, progress = 0 }) {
             0 0 3px rgb(132, 228, 255),
             0 0 5px rgb(207, 239, 246);
         }
-            .text-loader{
-            color:white;
-            align-items:center;
-            text-shadow: 0 0 5px rgb(0, 255, 247),
+
+        .text-loader {
+          color: white;
+          text-align: center;
+          text-shadow:
+            0 0 5px rgb(0, 255, 247),
             0 0 10px rgb(96, 1, 249),
             0 0 5px rgb(149, 0, 255);
-            }
+        }
       `}</style>
     </div>
   );
