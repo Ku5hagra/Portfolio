@@ -40,16 +40,14 @@ body,
   padding: 2em;
   transition: transform 0.5s ease-out;
   box-shadow: 5px 10px 20px 1px #000000;
-   background: transparent;
-   opacity: 0.7;
-  backdrop-filter:blur(100px);
-  border-radius:16px;
-        
+  background: transparent;
+  opacity: 0.7;
+  backdrop-filter: blur(100px);
+  border-radius: 16px;
 }
 .card:hover {
   transform: scale(1.02);
   opacity: 1;
-
 }
 
 /* Titles */
@@ -80,13 +78,10 @@ body,
   height: 120px;
   display: inline-block;
 }
-.skill-circle p{
-  color:white;
- text-shadow:
-    0 0 5px rgb(4, 252, 243),
-    0 0 10px rgb(127, 251, 255);
+.skill-circle p {
+  color: white;
+  text-shadow: 0 0 5px rgb(4, 252, 243), 0 0 10px rgb(127, 251, 255);
 }
-
 
 .progress-ring {
   position: absolute;
@@ -119,7 +114,7 @@ body,
   left: 50%;
   transform: translate(-50%, -50%);
   transition: filter 0.3s ease;
-  z-index: 1;  /* image below text */
+  z-index: 1; /* image below text */
 }
 
 .img-wrapper::after {
@@ -134,7 +129,7 @@ body,
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.3s ease;
   pointer-events: none;
-  z-index: 2;  /* overlay above image, below text */
+  z-index: 2; /* overlay above image, below text */
 }
 
 .level-text {
@@ -146,10 +141,8 @@ body,
   opacity: 0;
   transition: opacity 0.3s ease;
   color: #00eaff;
-  text-shadow:
-    0 0 3px rgb(4, 252, 243),
-    0 0 4px rgb(0, 0, 0);
-  z-index: 3;  /* ensure always above */
+  text-shadow: 0 0 3px rgb(4, 252, 243), 0 0 4px rgb(0, 0, 0);
+  z-index: 3; /* ensure always above */
 }
 
 .img-wrapper:hover img {
@@ -163,8 +156,6 @@ body,
 .img-wrapper:hover .level-text {
   opacity: 1;
 }
-
-
 
 /* Contact */
 .contact {
@@ -190,7 +181,13 @@ body,
 /* Animated GIF styling */
 .gif {
   border-radius: 100px;
-  background-image: radial-gradient(to right bottom, rgb(61, 122, 236), rgb(51, 195, 252), rgb(132, 221, 143), rgb(98, 238, 98));
+  background-image: radial-gradient(
+    to right bottom,
+    rgb(61, 122, 236),
+    rgb(51, 195, 252),
+    rgb(132, 221, 143),
+    rgb(98, 238, 98)
+  );
   animation: gif 10s infinite;
 }
 @keyframes gif {
@@ -209,7 +206,6 @@ body,
 }
 
 /* Loader styles */
-
 
 /* Webtitle responsiveness */
 .webtitle-section {
@@ -231,12 +227,221 @@ body,
   background: white;
 }
 .nav-link:hover {
-  color: #00f0ff;  /* or any glow color you like */
+  color: #00f0ff; /* or any glow color you like */
   text-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff;
 }
-.about-card{
+.about-card {
   box-shadow: 0 10px 100px rgb(0, 0, 0);
 }
-.star{
+.star {
   text-shadow: 0 0 3px yellow, 0 0 5px rgb(255, 255, 152);
+}
+
+/* title handshake */
+/* CSS for your existing button */
+.hire-button-container {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hire-button-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+.hire-button {
+  transition: filter 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+  position: relative;
+background: aqua;
+box-shadow: 0 0 10px rgb(149, 255, 255);
+}
+
+.handshake-overlay {
+  margin-top: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;
+  height: 300%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hand {
+  position: absolute;
+  font-size: 32px;
+  opacity: 0;
+}
+
+.left-hand {
+  left: -1px;
+}
+
+.right-hand {
+  right: 1px;
+}
+
+.handshake-result {
+  font-size: 36px;
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+.sparkles {
+  position: absolute;
+  margin-top: 180px;
+  font-size: 20px;
+  opacity: 0;
+  top: -20px;
+}
+.hire-button-wrapper:hover .hire-button {
+  background: yellow;  /* Or your new hover color */
+  color: black;        /* Button text color if text is visible */
+  box-shadow: 0 0 15px yellow, 0 0 30px orange;
+}
+
+.hire-button-wrapper:hover .hire-button .hire-text {
+  animation: gayab 0.5s ease-in forwards;
+}
+
+@keyframes gayab {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.hire-button-wrapper:hover .left-hand {
+  animation: slideInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hire-button-wrapper:hover .right-hand {
+  animation: slideInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hire-button-wrapper:hover .handshake-result {
+  animation: showHandshake 0.26s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s
+      forwards,
+    gentleShake 0.2s ease-in-out infinite 0.6s;
+}
+
+.hire-button-wrapper:hover .sparkles {
+  animation: sparkleEffect 0.8s ease-out 0.6s forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-10px) rotate(-25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-10px) rotate(-8deg);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(-0.5px) rotate(-3deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(10px) rotate(25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(10px) rotate(8deg);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(0.5px) rotate(3deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes showHandshake {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-15deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes gentleShake {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.02) rotate(-1deg);
+  }
+  75% {
+    transform: scale(1.02) rotate(1deg);
+  }
+}
+
+@keyframes sparkleEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(2) translateY(-5px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+  }
+}
+
+/* Enhanced glow effect */
+.hire-button-wrapper:hover .handshake-result {
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.8));
+}
+
+.hire-button-wrapper:hover .sparkles {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Reset animations when not hovering */
+.hire-button-wrapper:not(:hover) .left-hand,
+.hire-button-wrapper:not(:hover) .right-hand,
+.hire-button-wrapper:not(:hover) .handshake-result,
+.hire-button-wrapper:not(:hover) .sparkles {
+  animation: none !important;
+  opacity: 0;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
 
 const roles = [
   "Frontend Developer",
@@ -68,6 +69,33 @@ function Title() {
             I am a <span className="typewriter">{text}</span>
             <span className="cursor">|</span>
           </h4>
+<Link className="hire-button-container" to={{ pathname: "/contact" }}>
+      <div className="hire-button-wrapper">
+        <button 
+          className="hire-button"
+          style={{
+             borderRadius: "10px", 
+
+            marginTop: "100px", 
+            textShadow: "0 0 2px black",
+            color: "black",
+            border: "none",
+            cursor: "pointer",
+            position: "relative",
+            transition: "all 0.3s ease"
+          }}
+        >
+          <h6 style={{margin:"0px",padding: "5px",fontWeight: "bold"}} className="hire-text">Hire Me</h6>
+        </button>
+        
+        <div className="handshake-overlay">
+          <div className="hand left-hand">🫱</div>
+          <div className="hand right-hand">🫲</div>
+          <div className="handshake-result">🤝</div>
+          <div className="sparkles">✨</div>
+        </div>
+      </div>
+</Link>          
         </div>
       </div>
     </div>
