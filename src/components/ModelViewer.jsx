@@ -4,35 +4,50 @@ import { useFrame } from "@react-three/fiber";
 import home from "../assets/home.webp";
 
 export default function ModelViewer({ onLoaded, scrollY }) {
-  const { scene } = useGLTF("/computer.glb");
+  const { scene, error } = useGLTF("/computer.glb");
   const groupRef = useRef();
   const [isInteracting, setIsInteracting] = useState(false);
+  const [assetsReady, setAssetsReady] = useState(false);
   const clock = useRef(0);
 
-  // Notify when model is loaded
+  // Simple approach: just check if scene exists and call onLoaded after a short delay
   useEffect(() => {
-    if (scene && onLoaded) {
-      onLoaded();
+    if (scene) {
+      console.log("✅ Scene loaded:", scene);
+      // Give it a moment to ensure everything is ready
+      const timer = setTimeout(() => {
+        console.log("🎉 Assets ready, calling onLoaded");
+        setAssetsReady(true);
+        if (onLoaded) onLoaded();
+      }, 500);
+      
+      return () => clearTimeout(timer);
     }
-  }, [scene, onLoaded]);
+    
+    if (error) {
+      console.error("❌ GLTF loading error:", error);
+      // Even if there's an error, we should still proceed to prevent infinite loading
+      setTimeout(() => {
+        console.log("⚠️ Proceeding despite error");
+        setAssetsReady(true);
+        if (onLoaded) onLoaded();
+      }, 1000);
+    }
+  }, [scene, error, onLoaded]);
 
   // Rotation logic
   useFrame((_, delta) => {
-    if (groupRef.current) {
+    if (groupRef.current && assetsReady) {
       const maxScroll = 1000;
       const clampedScroll = Math.min(scrollY || 0, maxScroll);
       const progress = clampedScroll / maxScroll;
 
-      const scrollRotation = Math.PI * (1 - progress); // π to 0
-      const rockingAngle = (Math.PI / 50) * Math.sin(clock.current); // rocking
+      const scrollRotation = Math.PI * (1 - progress);
+      const rockingAngle = (Math.PI / 50) * Math.sin(clock.current);
 
-      // If not interacting, apply rocking; otherwise, apply scroll-based rotation
       const targetY = isInteracting ? scrollRotation : scrollRotation + rockingAngle;
-
-      // Smoothly interpolate rotation
       groupRef.current.rotation.y += (targetY - groupRef.current.rotation.y) * 0.05;
 
-      // Increment clock for rocking
       if (!isInteracting) {
         clock.current += delta;
       }
@@ -53,9 +68,13 @@ export default function ModelViewer({ onLoaded, scrollY }) {
     };
   }, []);
 
+  // Don't render until scene is available
+  if (!scene) {
+    return null;
+  }
+
   return (
-    <group ref={groupRef} position={[0, 0, -2]} rotation={[0, -Math.PI/4 , 0]} // 45 degrees right
- scale={[3, 3, 3]}>
+    <group ref={groupRef} position={[0, 0, -2]} rotation={[0, -Math.PI/4, 0]} scale={[3, 3, 3]}>
       <primitive object={scene} />
       <group scale={[0.23, 0.24, 0.23]}>
         <Html
@@ -65,7 +84,7 @@ export default function ModelViewer({ onLoaded, scrollY }) {
           distanceFactor={1.2}
           style={{
             width: "1024px",
-            opacity:1,
+            opacity: 1,
             height: "600px",
             border: "none",
             overflow: "hidden",

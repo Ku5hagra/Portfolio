@@ -18,7 +18,8 @@ export default function Loader({ visible, progress = 0 }) {
         alignItems: "center",
         zIndex: 1000,
         opacity: visible ? 1 : 0,
-        transition: "opacity 0.5s ease",
+        visibility: visible ? "visible" : "hidden",
+        transition: "opacity 0.5s ease, visibility 0.5s ease",
         pointerEvents: visible ? "auto" : "none",
       }}
     >
@@ -69,7 +70,7 @@ export default function Loader({ visible, progress = 0 }) {
           height: 100%;
           overflow: hidden;
           pointer-events: none;
-          transition: width 0.2s ease-out;
+          transition: width 0.3s ease-out;
         }
 
         .ka-bright {
@@ -86,6 +87,7 @@ export default function Loader({ visible, progress = 0 }) {
             0 0 3px rgb(132, 228, 255),
             0 0 5px rgb(207, 239, 246);
           margin: 0;
+          white-space: nowrap;
         }
 
         .loading-info {
@@ -122,7 +124,7 @@ export default function Loader({ visible, progress = 0 }) {
           height: 100%;
           background: linear-gradient(90deg, #00d5ff, #84e4ff);
           border-radius: 2px;
-          transition: width 0.2s ease-out;
+          transition: width 0.3s ease-out;
           box-shadow: 0 0 10px rgba(0, 213, 255, 0.5);
         }
 

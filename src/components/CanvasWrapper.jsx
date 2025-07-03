@@ -9,7 +9,7 @@ function CameraAnimation({ scrollRef, setEmbedActive, setScrollY }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = scrollRef.current?.scrollTop || 0;
-      setScrollY(scrollY); // <-- Pass scroll to parent
+      setScrollY(scrollY);
       const threshold = 1000;
       setEmbedActive(scrollY >= threshold);
     };
@@ -32,7 +32,7 @@ function CameraAnimation({ scrollRef, setEmbedActive, setScrollY }) {
   return null;
 }
 
-export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
+export default function CanvasWrapper({ setEmbedActive, onModelLoaded, isLoading }) {
   const scrollRef = useRef();
   const canvasRef = useRef();
   const [interacting, setInteracting] = useState(false);
@@ -49,11 +49,11 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
       setInteracting(false);
     };
 
-    canvasEl.addEventListener("pointerdown", enableInteraction);
+    canvasEl?.addEventListener("pointerdown", enableInteraction);
     window.addEventListener("pointerup", disableInteraction);
 
     return () => {
-      canvasEl.removeEventListener("pointerdown", enableInteraction);
+      canvasEl?.removeEventListener("pointerdown", enableInteraction);
       window.removeEventListener("pointerup", disableInteraction);
     };
   }, []);
@@ -70,7 +70,9 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
           width: "100vw",
           height: "100vh",
           overflowY: "scroll",
-          zIndex: 1, // scroll container below canvas
+          zIndex: 1,
+          // Disable scrolling while loading
+          pointerEvents: isLoading ? "none" : "auto",
         }}
       >
         <div style={{ height: "300vh" }} />
@@ -86,8 +88,11 @@ export default function CanvasWrapper({ setEmbedActive, onModelLoaded }) {
           left: 0,
           width: "100vw",
           height: "100vh",
-          zIndex: 2, // above scroll container
-          pointerEvents: interacting ? "auto" : "none", // dynamic!
+          zIndex: 2,
+          // Hide canvas while loading, then make interactive
+          opacity: isLoading ? 0 : 1,
+          transition: "opacity 0.5s ease",
+          pointerEvents: isLoading ? "none" : (interacting ? "auto" : "none"),
         }}
       >
         <ambientLight intensity={0.6} />
