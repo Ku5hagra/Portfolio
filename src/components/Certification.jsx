@@ -1,4 +1,5 @@
 import React from "react";
+import gate from "../assets/gate-logo.webp";
 import unschool from "../assets/unschool.webp";
 import inspark from "../assets/inspark.webp";
 import ips from "../assets/ips.webp";
@@ -17,10 +18,32 @@ export default function Certification() {
         style={{ color: "white" }}
         className="font-weight-light text-center pb-5"
       >
-        These are some of my Certificates
+        These are some of my Certificates and Achievements
       </p>
       <div className="row justify-content-center">
         
+        <div className="col-md-4 mb-4"><Zoom>
+          <div className="card">
+            <img
+              src={gate}
+              alt="Gate-Scorecard"
+              className="card-img-top"
+            />
+            <div className="card-body">
+              <h5 className="card-title text-light">Gate Qualified</h5>
+              <p className="card-text text-light">Gate CS 2026</p>
+              <a
+                href="https://drive.google.com/file/d/1S8YI9nGAME1vNDWkOwVlSQEpfNyntnSz/view?usp=sharing"
+                className="btn btn-outline-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Certificate
+              </a>
+            </div>
+          </div></Zoom>
+        </div>
+
         <div className="col-md-4 mb-4"><Zoom>
           <div className="card">
             <img
